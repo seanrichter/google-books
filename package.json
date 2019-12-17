@@ -1,0 +1,20 @@
+{
+  "name": "google-books-homework",
+  "version": "1.0.0",
+  "description": "boilerplate for google-books-homework",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "Sean Richter",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.0.1",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.1.1",
+    "nodemon": "^2.0.2"
+  }
+}
