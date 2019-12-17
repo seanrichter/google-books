@@ -1,9 +1,12 @@
 {
+  "homepage": "http://seanrichter.github.io/google-books",
   "name": "google-books-homework",
   "version": "1.0.0",
   "description": "boilerplate for google-books-homework",
   "main": "server.js",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "node server.js",
     "server": "nodemon server.js"
   },
