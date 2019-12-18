@@ -1,31 +1,27 @@
 const express = require("express");
 const mongoose = require("mongoose");
+// SAVE THIS STEP UNTIL ROUTES
 const routes = require("./routes");
-
-const PORT = 5000;
 const app = express();
+const PORT = process.env.PORT || 5000;
 
 // Defining middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Static assets
+// Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// Define API routes
+// SAVE THIS STEP UNTIL ROUTES
 app.use(routes);
 
-//http://localhost:5000/api/books
-app.get("/api/books", (req, res) => {
-  const books = [
-    { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: "1925" },
-    { id: 2, title: "The Catcher in the Rye", author: "JD Salinger", year: "1951" },
-    { id: 3, title: "To Kill a Mockingbird", author: "Harper Lee", year: "1960" }
-  ];
+// Connect to the Mongo DB
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks",{useNewUrlParser:true,useUnifiedTopology: true});
 
-  res.json(books);
+
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`API Server now listening on PORT ${PORT}!`);
 });
-
-app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));
