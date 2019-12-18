@@ -17,15 +17,15 @@ if (process.env.NODE_ENV === "production") {
 // Define API routes
 app.use(routes);
 
-//http://localhost:5000/api/customers
-app.get("/api/customers", (req, res) => {
-  const customers = [
-    { id: 1, firstName: "Robin", lastName: "Trower" },
-    { id: 2, firstName: "Bill", lastName: "Withers" },
-    { id: 3, firstName: "Roy", lastName: "Buchanan" }
+//http://localhost:5000/api/books
+app.get("/api/books", (req, res) => {
+  const books = [
+    { id: 1, title: "The Great Gatsby", author: "F. Scott Fitzgerald", year: "1925" },
+    { id: 2, title: "The Catcher in the Rye", author: "JD Salinger", year: "1951" },
+    { id: 3, title: "To Kill a Mockingbird", author: "Harper Lee", year: "1960" }
   ];
 
-  res.json(customers);
+  res.json(books);
 });
 
 app.listen(PORT, () => console.log(`Server started on PORT ${PORT}`));

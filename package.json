@@ -10,6 +10,7 @@
     "start": "node server.js",
     "server": "nodemon server.js"
   },
+  "proxy": "http://localhost:5000",
   "author": "Sean Richter",
   "license": "MIT",
   "dependencies": {
