@@ -9,7 +9,7 @@ function Form(props) {
           <label htmlFor="search">
             <h2>Search for and save Books of Interest</h2>
           </label>
-          <input
+          <input 
             onChange={props.handleInputChange}
             value={props.search}
             name="search"
